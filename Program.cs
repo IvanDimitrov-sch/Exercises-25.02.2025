@@ -31,6 +31,16 @@
             }
             return array;
         }
-        
+        public static Array Moving(int[] array, int key)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] == key)
+                {
+                    (array[0], array[i]) = (array[i], array[0]);
+                }
+            }
+            return array;
+        }
     }
 }
