@@ -4,6 +4,11 @@
     {
         static void Main(string[] args)
         {
+            Exercise34();
+
+        }
+        public static void Exercise34()
+        {
             int[] array = CreateArray(10, false);
             Console.WriteLine("Enter key: \n");
             int k = int.Parse(Console.ReadLine());
