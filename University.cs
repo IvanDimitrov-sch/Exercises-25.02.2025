@@ -9,10 +9,14 @@ namespace Exercises_25._02._2025
     internal class University
     {
         List<Student> students;//sorted
+        public University(List<Student> students)
+        {
+            this.students = students;
+        }
         public string FindStudentByScore(int score)
         {
-            int left = 9;
-            int right = students.Count - 1;
+            int left = 0;
+            int right = this.students.Count - 1;
             while (left <= right)
             {
                 int mid = left + (right - left) / 2;
@@ -22,11 +26,12 @@ namespace Exercises_25._02._2025
                 }
                 else if (students[mid].Score < score)
                 {
-                    left = mid + 1;
+                    
+                    right = mid - 1;
                 }
                 else
                 {
-                    right = mid - 1;
+                    left = mid + 1;
                 }
             }
             return "Not found";

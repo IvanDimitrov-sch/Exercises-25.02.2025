@@ -4,11 +4,32 @@
     {
         static void Main(string[] args)
         {
-            Exercise34();
+            //Exercise34();
+            Exercise5();
+        }
+        public static void Exercise5()
+        {
+            Console.WriteLine("--------------EXERCISE 5--------------");
+            List<Student> students = new List<Student>();
+            students.Add(new Student("Petar", 10));
+            students.Add(new Student("Kennen", 25));
+            students.Add(new Student("Darius", 20));
+            students.Add(new Student("Kalista", 50));
+            students.Add(new Student("Azir", 80));
+            students.Add(new Student("Xerath", 67));
+            students.Add(new Student("Nunu", 38));
+
+            students = students.OrderByDescending(s => s.Score).ToList();
+            Console.WriteLine(String.Join("\n", students.Select(s => $"{s.Name} : {s.Score}")));
+
+            University uni = new University(students);
+            Console.Write("Student: ");
+            Console.Write(uni.FindStudentByScore(80));
 
         }
         public static void Exercise34()
         {
+            Console.WriteLine("--------------EXERCISE 3 AND 4--------------");
             int[] array = CreateArray(10, false);
             Console.WriteLine("Enter key: \n");
             int k = int.Parse(Console.ReadLine());
